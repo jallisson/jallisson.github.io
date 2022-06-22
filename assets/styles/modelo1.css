@@ -1,0 +1,227 @@
+:root{
+    --cor-cinza: #f4f4f4ff;
+    --cor-azul-escuro: #163a49ff;
+    --cor-azul-claro: #22566bff;
+}
+@font-face {
+    font-family: "ChauPhilomeneOne";
+    src: url('/assets/fonts/Chau-Philomene-One/chauphilomeneone/ChauPhilomeneOne-Regular.ttf');
+}
+*{
+    list-style: none; /*some com as bolinhas das listas*/
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Century Gothic', 'sans-serif';
+    font-size: 24px;
+}
+h1,h2{
+    font-family: "ChauPhilomeneOne";
+    color:var(--cor-azul-escuro);
+}
+h1,h2,h3,h4,h5{
+    text-transform: uppercase;
+}
+.pagina{
+    margin:auto;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+}
+
+.pagina>div{
+    margin: 25px;
+    padding:0 22px 40px 22px;
+}
+
+.pagina>div>ul>li{
+    margin-bottom: 20px;
+}
+
+.pagina>div>ul>li>img{
+    float:left;
+    margin-right: 20px;
+}
+
+.pagina>div>h2{
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.titulo{
+    grid-column: 2;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-row: 1;
+}
+
+.titulo>h1{
+    font-size: 55px;
+}
+
+.titulo>h5{
+    font-size: 30px;
+}
+
+
+
+.foto{
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    text-align: center;
+    position: relative;
+}
+
+.pagina>.contato{
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: var(--cor-cinza);
+    position: relative;
+    padding-top: 40px;
+}
+
+.contato>ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.pagina>.foto::before, .pagina>.contato::before{
+    margin: 0;
+    padding: 0;
+    content: '';
+    width: 90%;
+    height: 90%;
+    background-color: var(--cor-cinza);
+    position: absolute;
+    top: -55px;
+    left: -55px;
+    z-index: -2;
+}
+
+.pagina>.contato::before{
+    height: 100%;
+    top: 0%;
+    left: -75%;
+}
+
+.foto>img{
+    height: 80%;
+}
+
+.pagina>.resumo{
+    grid-column: 1;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    border: 4px solid var(--cor-azul-claro);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 500px;
+    padding-top: 150px;
+    position: relative;
+    z-index: -1;
+}
+
+.formacao{
+    grid-column: 1;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.idiomas{
+    grid-column: 1;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.experiencias{
+    grid-column: 2;
+    grid-row-start: 4;
+    grid-row-end: 7;
+}
+
+.pagina>.experiencias>ul{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pagina>.experiencias>ul>li{
+    margin-bottom: 50px;
+    border-left: 5px dashed var(--cor-azul-claro);
+    padding: 20px;
+    position: relative;
+}
+
+.pagina>.experiencias>ul>li :first-child{
+    margin-bottom: 20px;
+}
+
+.pagina>.experiencias>ul>li::before,.pagina>.experiencias>ul>li::after{
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border: 5px solid var(--cor-azul-claro);
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: -13.5px;
+
+} 
+
+.pagina>.experiencias>ul>li::after{
+    top: auto;
+    bottom: 0;
+}
+
+@media screen and (max-width:1000px) {
+    .pagina{
+       /* background-color: red; para testes*/ 
+        display: flex;
+        flex-direction: column;
+    }
+    .pagina>.titulo{
+        padding: 0;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .pagina>.foto::before{
+        top: -25px;
+        left: -25px;
+    }
+    .pagina>.foto>img{
+        width: 100%;
+        height: auto;
+    }
+    .pagina>.resumo{
+        margin-top: -250px;
+    }
+    .pagina>.contato::before{
+        content: none;
+    }
+    .pagina>div{
+        margin:11px 22px;
+    }
+}
+a:link {
+    color: green;
+    text-decoration: none;
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+a:hover {
+    color: pink;
+    text-decoration: none;
+    color: red;
+    border-top: 20px;
+  }
